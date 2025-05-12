@@ -1,0 +1,18 @@
+# Файлы редактора
+.idea
+*.sublime*
+.vscode
+
+# Вспомогательные файлы
+*node_modules/
+package-lock.json
+npm-debug.*
+.stylelintcache
+.nvmrc
+*.ai
+*.psd
+*.log*
+
+# Папка с собранными файлами проекта
+build/
+dist/
