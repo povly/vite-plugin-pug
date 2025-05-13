@@ -1,7 +1,5 @@
 import { defineConfig } from "vitest/config";
 import PugConverter from "./src";
-import createPath from "./src/functions/createPath";
-import splitStringByDelimiter from "./src/functions/splitStringBySlash";
 export default defineConfig({
   test: {
     watch: true,
@@ -11,9 +9,9 @@ export default defineConfig({
   plugins: [
     PugConverter({
       paths: {
-        src: createPath(__dirname, ...splitStringByDelimiter('test/src/pug')),
-        pages: createPath(__dirname, ...splitStringByDelimiter('test/src/pug/pages')),
-        output: createPath(__dirname, ...splitStringByDelimiter('test/dist/html'))
+        src: 'test/src/pug',
+        pages: 'test/src/pug/pages',
+        output: 'test/dist/html'
       },
       renderOptions: {
         pretty: true,
