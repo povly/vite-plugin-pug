@@ -6,7 +6,7 @@ import splitStringByDelimiter from './functions/splitStringBySlash.js';
 import createPath from './functions/createPath.js';
 import generalHtml from './functions/generateHtml.js';
 
-export default function PugConverter(config) {
+export default function PugConverter(config = {}) {
 
   const defaultConfig = {
     paths: {
