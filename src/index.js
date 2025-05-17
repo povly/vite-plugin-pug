@@ -12,7 +12,7 @@ export default function PugConverter(config) {
     paths: {
       src: createPath(__dirname, ...splitStringByDelimiter('pug')),
       pages: createPath(__dirname, ...splitStringByDelimiter('pug/pages')),
-      output: createPath(__dirname, ...splitStringByDelimiter('../dist/html'))
+      output: createPath(__dirname, ...splitStringByDelimiter('../dist'))
     },
     renderOptions: {
       pretty: true,

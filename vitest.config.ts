@@ -11,7 +11,7 @@ export default defineConfig({
       paths: {
         src: 'test/src/pug',
         pages: 'test/src/pug/pages',
-        output: 'test/dist/html'
+        output: 'test/dist'
       },
       renderOptions: {
         pretty: true,

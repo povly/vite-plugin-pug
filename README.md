@@ -1,6 +1,6 @@
 # Vite Plugin for Pug to HTML Conversion
 
-This plugin for Vite allows you to convert Pug files to HTML. It tracks changes in the folder `src/pug/` and converts files from `src/pug/pages` to `dist/html'.
+This plugin for Vite allows you to convert Pug files to HTML. It tracks changes in the folder `src/pug/` and converts files from `src/pug/pages` to `dist'.
 
 ## Installation
 
@@ -22,7 +22,7 @@ const config = {
   paths: {
     src: 'src/pug',
     pages: 'src/pug/pages',
-    output: 'dist/html'
+    output: 'dist'
   },
   renderOptions: {
     pretty: true,
@@ -66,9 +66,8 @@ project/
 │  │ ├── footer.pug
 |  └── etc.
 └── dist/
- └── html/ # Compilation result
-   ├── index.html
-   └── about.html
+  ├── index.html
+  └── about.html
 ```
 
 ## 🚀 Features
