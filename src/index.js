@@ -5,16 +5,14 @@ import merge from 'deepmerge';
 import splitStringByDelimiter from './functions/splitStringBySlash.js';
 import createPath from './functions/createPath.js';
 import generalHtml from './functions/generateHtml.js';
-import getDirname from './functions/getDirname.js';
-const __dirname = getDirname(import.meta.url);
 
 export default function PugConverter(config = {}) {
 
   const defaultConfig = {
     paths: {
-      src: createPath(__dirname, ...splitStringByDelimiter('pug')),
-      pages: createPath(__dirname, ...splitStringByDelimiter('pug/pages')),
-      output: createPath(__dirname, ...splitStringByDelimiter('../dist'))
+      src: createPath(...splitStringByDelimiter('src/pug')),
+      pages: createPath(...splitStringByDelimiter('src/pug/pages')),
+      output: createPath(...splitStringByDelimiter('dist'))
     },
     renderOptions: {
       pretty: true,
@@ -33,7 +31,7 @@ export default function PugConverter(config = {}) {
           const mergedPaths = { ..._defaultPaths };
           for (const [key, value] of Object.entries(_userPaths)) {
             mergedPaths[key] = '';
-            mergedPaths[key] = createPath(__dirname, ...splitStringByDelimiter('../'+value));
+            mergedPaths[key] = createPath(...splitStringByDelimiter(value));
           }
           return mergedPaths;
         }
