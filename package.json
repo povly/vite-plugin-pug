@@ -1,6 +1,6 @@
 {
   "name": "@povly/vite-plugin-pug",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Vite plugin for transform Pug into HTML",
   "keywords": [
     "vite",
