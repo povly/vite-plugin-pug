@@ -1,6 +1,6 @@
 {
   "name": "@povly/vite-plugin-pug",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Vite plugin for transform Pug into HTML",
   "keywords": [
     "vite",
@@ -8,6 +8,13 @@
     "pug",
     "jade"
   ],
+  "type": "module",
+  "main": "./src/index.js",
+  "exports": {
+    ".": {
+      "import": "./src/index.js"
+    }
+  },
   "private": false,
   "homepage": "https://github.com/povly/vite-plugin-pug#readme",
   "bugs": {
@@ -19,7 +26,6 @@
   },
   "license": "ISC",
   "author": "Anatoly Porshnyov <povly19995@gmail.com>",
-  "type": "module",
   "dependencies": {
     "deepmerge": "^4.3.1",
     "pug": "^3.0.3"
