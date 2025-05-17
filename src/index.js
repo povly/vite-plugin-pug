@@ -5,6 +5,8 @@ import merge from 'deepmerge';
 import splitStringByDelimiter from './functions/splitStringBySlash.js';
 import createPath from './functions/createPath.js';
 import generalHtml from './functions/generateHtml.js';
+import getDirname from './functions/getDirname.js';
+const __dirname = getDirname(import.meta.url);
 
 export default function PugConverter(config = {}) {
 
