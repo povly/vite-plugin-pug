@@ -78,4 +78,4 @@ project/
 
 
 ## Contribution
-If it doesn't match with your setup please [start a new discussion](https://github.com/povly/vite-plugin-pug/discussions/new/choose) about it, I'm interested to see other workflows. If something is simply not working, please [raise an issue](https://github.com/povly/vite-plugin-pug/issues). PRs certainly welcome! (.❛ ᴗ ❛.)
+Thank you for contributing in the project. If something is simply not working, please [raise an issue](https://github.com/povly/vite-plugin-pug/issues). PRs certainly welcome! (.❛ ᴗ ❛.)
