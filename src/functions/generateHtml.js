@@ -1,27 +1,33 @@
-import fs from "fs";
+import fs from "fs/promises";
 import ensureDirectoryExists from "./ensureDirectoryExists.js";
 import { normalizePath } from "vite";
 import renderPugToHtml from "./renderPugToHtml.js";
 import path from "path";
 
-export default function generateHtml(config) {
-  ensureDirectoryExists(config.paths.output);
-  fs.readdirSync(config.paths.pages, { withFileTypes: true }).forEach(file => {
-    const _path = file.parentPath; // path file
-    const _name = file.name; // name file
-    // Check if pug at dir src/pug/pages
-    if (_path.includes(config.paths.pages) && _name.endsWith('.pug')) {
-      const name = _name.replace('.pug', '.html');
+export default async function generateHtml(config) {
+  await ensureDirectoryExists(config.paths.output);
+
+  const files = await fs.readdir(config.paths.pages, {
+    withFileTypes: true,
+    encoding: "utf-8"
+  });
+
+  for (const file of files) {
+    const filePath = path.join(config.paths.pages, file.name);
+
+    if (file.isFile() && file.name.endsWith('.pug')) {
       const html = renderPugToHtml(
-        normalizePath(path.join(_path, _name)),
+        normalizePath(filePath),
         config.renderOptions
       );
+
       if (html) {
-        fs.writeFileSync(
-          path.join(config.paths.output, name),
+        const outputName = file.name.replace('.pug', '.html');
+        await fs.writeFile(
+          path.join(config.paths.output, outputName),
           html
-        )
+        );
       }
     }
-  });
+  }
 }

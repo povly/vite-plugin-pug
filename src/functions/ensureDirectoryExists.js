@@ -1,6 +1,10 @@
-import fs from 'fs';
-export default function ensureDirectoryExists(dirPath) {
-  if (!fs.existsSync(dirPath)) {
-    fs.mkdirSync(dirPath, { recursive: true });
+import fs from 'fs/promises';
+
+export default async function ensureDirectoryExists(dirPath) {
+  try {
+    await fs.mkdir(dirPath, { recursive: true });
+  } catch (err) {
+    console.error('Directory creation error:', err);
+    throw err;
   }
 }

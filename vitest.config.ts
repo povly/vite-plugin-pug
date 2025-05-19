@@ -12,10 +12,6 @@ export default defineConfig({
         src: 'test/src/pug',
         pages: 'test/src/pug/pages',
         output: 'test/dist'
-      },
-      renderOptions: {
-        pretty: true,
-        cache: false
       }
     })
   ]

@@ -39,14 +39,12 @@ export default function PugConverter(config = {}) {
     }
   });
 
-
   return {
     name: 'vite-plugin-pug',
     configureServer(server) {
       generalHtml(__mergedConfig);
-      let watcher;
       if (__mergedConfig.serverOptions.watcher) {
-        fs.watch(
+        const watcher = fs.watch(
           __mergedConfig.paths.src,
           { recursive: true },
           (eventType, filename) => {
@@ -55,9 +53,9 @@ export default function PugConverter(config = {}) {
             }
           }
         )
-      }
-      if (__mergedConfig.serverOptions.watcher && __mergedConfig.serverOptions.close){
-        server.httpServer?.once('close', () => watcher.close());
+        if (__mergedConfig.serverOptions.close) {
+          server.httpServer?.once('close', () => watcher.close());
+        }
       }
     },
     buildStart() {
