@@ -76,6 +76,8 @@ project/
 - Pug settings: Full control over rendering options
 - Integration with Vite: Works with dev server and production build
 
-
 ## Contribution
 Thank you for contributing in the project. If something is simply not working, please [raise an issue](https://github.com/povly/vite-plugin-pug/issues). PRs certainly welcome! (.❛ ᴗ ❛.)
+
+## Additional Information
+I use a layout build without a framework from this link: [Vite Template HTML](https://github.com/povly/vite-template-html)
